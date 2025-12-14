@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6931b5abbc6a1f597075db61"
+  },
+  "type": "familia",
+  "personA": "6931a81cbc6a1f597075db45",
+  "personB": "6931a9a7bc6a1f597075db4a",
+  "relation": "sibling",
+  "createdAt": {
+    "$date": "2025-12-04T10:00:00.000Z"
+  },
+  "ownerUserId": "6931a81cbc6a1f597075db45"
+}]

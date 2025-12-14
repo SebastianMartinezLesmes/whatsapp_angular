@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "6931ab77bc6a1f597075db51"
+  },
+  "ownerUserId": "6931a81cbc6a1f597075db45",
+  "createdAt": {
+    "$date": "2025-12-04T10:00:00.000Z"
+  },
+  "contact": {
+    "userId": "6931a9a7bc6a1f597075db4a",
+    "alias": "Isabella mi pitufo",
+    "phone": "+573001112233"
+  }
+}]
