@@ -4,22 +4,16 @@
        USUARIO
   ============================= -->
 <section class="box">
-  <h3>Elegir usuario activo</h3>
-
-  <select [(ngModel)]="selectedUserId" (change)="changeUser()">
-    @for (u of users; track u._id.$oid) {
-      <option [value]="u._id.$oid">
-        {{ u.name }}
-      </option>
-    }
-  </select>
-</section>
-
-<section class="box">
-  <h3>Usuario activo</h3>
+  <h3>Usuario</h3>
 
   @if (user) {
-    <p><strong>Nombre:</strong> {{ user.name }}</p>
+    <select [(ngModel)]="selectedUserId" (change)="changeUser()">
+      @for (u of users; track u._id.$oid) {
+        <option [value]="u._id.$oid">
+          {{ u.name }}
+        </option>
+      }
+    </select>
     <p><strong>Teléfono:</strong> {{ user.phone }}</p>
     <p><strong>Status:</strong> {{ user.status }}</p>
 
@@ -36,8 +30,10 @@
        CONTACTOS
   ============================= -->
   <section class="box">
-    <h3>Contactos</h3>
-
+    <h3>
+      Contactos
+      <button (click)="addContact()">+</button>
+    </h3>
     <ul>
       @for (c of contacts; track c.userId) {
         <li>

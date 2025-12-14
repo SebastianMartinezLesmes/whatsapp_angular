@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-root',
   imports: [CommonModule, FormsModule, RouterOutlet],
@@ -62,4 +64,36 @@ export class App {
 
     return "(sin datos)";
   }
+
+  // add contactos
+  addContact() {
+    Swal.fire({
+      title: 'Agregar contacto',
+      html: `
+        <input id="name" class="swal2-input" placeholder="Nombre">
+        <input id="phone" class="swal2-input" placeholder="Teléfono">
+      `,
+      confirmButtonText: 'Guardar',
+      showCancelButton: true,
+      preConfirm: () => {
+        const name = (document.getElementById('name') as HTMLInputElement).value;
+        const phone = (document.getElementById('phone') as HTMLInputElement).value;
+        if (!name || !phone) {
+          Swal.showValidationMessage('Todos los campos son obligatorios');
+          return false;
+        }
+        return { name, phone };
+      }
+    }).then(result => {
+      if (result.isConfirmed && result.value) {
+        this.contacts.push({
+          userId: crypto.randomUUID(), // id simple
+          alias: result.value.name,
+          phone: result.value.phone,
+          profileImage: 'https://.../default.png'
+        });
+      }
+    });
+  }
+
 }

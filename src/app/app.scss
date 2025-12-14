@@ -1,8 +1,8 @@
 /* ============================
    VARIABLES
 ============================ */
-$bg-main: #f0f2f5;
-$bg-box: #ffffff;
+$bg-main: #e0e1e4;
+$bg-box: #ffffff94;
 $primary: #25d366;
 $text-main: #111;
 $text-muted: #666;
@@ -33,6 +33,10 @@ $shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  height: 320px; 
+  overflow-y: auto; 
+  overflow-x: hidden;
 
   h3 {
     margin: 0;
@@ -71,6 +75,11 @@ select {
     color: $text-muted;
     font-weight: 500;
   }
+}
+
+.box h3 {
+    display: flex;
+    justify-content: space-between;
 }
 
 .box img {
