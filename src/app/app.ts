@@ -35,8 +35,8 @@ export class App {
   }
 
   contacts = [
-    { userId: "u1", alias: "María", phone: "+57300...", profileImage: "https://..." },
-    { userId: "u2", alias: "Pedro", phone: "+57301...", profileImage: "https://..." }
+    { upId:"6931a81cbc6a1f597075db45", userId: "u1", alias: "María", phone: "+57300...", profileImage: "https://..." },
+    { upId:"6931a81cbc6a1f597075db45", userId: "u2", alias: "Pedro", phone: "+57301...", profileImage: "https://..." }
   ];
 
   relations = [
@@ -50,6 +50,10 @@ export class App {
   filteredRelations() {
     if (!this.filterType) return this.relations;
     return this.relations.filter(r => r.type === this.filterType);
+  }
+
+  filteredContacts() {
+    return this.contacts.filter(c => c.upId === this.selectedUserId);
   }
 
   getLabel(r: any) {
@@ -87,6 +91,7 @@ export class App {
     }).then(result => {
       if (result.isConfirmed && result.value) {
         this.contacts.push({
+          upId: this.selectedUserId,
           userId: crypto.randomUUID(), // id simple
           alias: result.value.name,
           phone: result.value.phone,

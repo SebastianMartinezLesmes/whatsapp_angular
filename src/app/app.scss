@@ -26,6 +26,8 @@ $shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
    BOX (SECCIONES)
 ============================ */
 .box {
+  height: auto;
+  max-height: 220px;
   background: $bg-box;
   border-radius: $radius;
   padding: 16px;
@@ -44,6 +46,12 @@ $shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     color: $primary;
     border-bottom: 1px solid $border-light;
     padding-bottom: 6px;
+  }
+
+  ul li:hover{
+    background-color: rgba(37, 211, 102, 0.3);
+    border-radius: 12px;
+    padding: 16px;
   }
 }
 

@@ -34,8 +34,9 @@
       Contactos
       <button (click)="addContact()">+</button>
     </h3>
+
     <ul>
-      @for (c of contacts; track c.userId) {
+      @for (c of filteredContacts(); track c.userId) {
         <li>
           <img [src]="c.profileImage" width="40" height="40">
           {{ c.alias }} – {{ c.phone }}
@@ -43,7 +44,6 @@
       }
     </ul>
   </section>
-
 
 
   <!-- ============================
