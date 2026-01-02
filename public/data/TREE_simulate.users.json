@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6931a81cbc6a1f597075db45"
+  },
+  "name": "Juan Lesmes",
+  "pass": "12345",
+  "phone": "+573001112233",
+  "status": "On",
+  "profileImage": "https://.../img.png"
+},
+{
+  "_id": {
+    "$oid": "6931a9a7bc6a1f597075db4a"
+  },
+  "name": "Isabella lesmes",
+  "pass": "12345",
+  "phone": "+573001112234",
+  "status": "On",
+  "profileImage": "https://.../img.png"
+},
+{
+  "_id": {
+    "$oid": "6931a9bebc6a1f597075db4c"
+  },
+  "name": "Javier Rodriguez",
+  "pass": "12345",
+  "phone": "+573001112235",
+  "status": "On",
+  "profileImage": "https://.../img.png"
+},
+{
+  "_id": {
+    "$oid": "6931a9d2bc6a1f597075db4e"
+  },
+  "name": "Ginna Lesmes",
+  "pass": "12345",
+  "phone": "+573001112236",
+  "status": "On",
+  "profileImage": "https://.../img.png"
+}]
