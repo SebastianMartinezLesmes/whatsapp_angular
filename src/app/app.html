@@ -36,7 +36,7 @@
     </h3>
 
     <ul>
-      @for (c of filteredContacts(); track c.userId) {
+      @for (c of filteredContacts(); track c.ownerUserId) {
         <li>
           <img [src]="c.profileImage" width="40" height="40">
           {{ c.alias }} – {{ c.phone }}

@@ -35,8 +35,11 @@ export class App {
   }
 
   contacts = [
-    { upId:"6931a81cbc6a1f597075db45", userId: "u1", alias: "María", phone: "+57300...", profileImage: "https://..." },
-    { upId:"6931a81cbc6a1f597075db45", userId: "u2", alias: "Pedro", phone: "+57301...", profileImage: "https://..." }
+    { ownerUserId:"6931a81cbc6a1f597075db45", userId: "u1", alias: "María", phone: "+57300...", profileImage: "https://..." },
+    { ownerUserId:"6931a81cbc6a1f597075db45", userId: "u2", alias: "Pedro", phone: "+57301...", profileImage: "https://..." },
+    { ownerUserId:"6931a9a7bc6a1f597075db4a", userId: "u3", alias: "Lilit", phone: "+57302...", profileImage: "https://..." },
+    { ownerUserId:"6931a9a7bc6a1f597075db4a", userId: "u4", alias: "Eva", phone: "+57303...", profileImage: "https://..." },
+    { ownerUserId:"6931a9bebc6a1f597075db4c", userId: "u5", alias: "Alex", phone: "+57303...", profileImage: "https://..." },
   ];
 
   relations = [
@@ -53,7 +56,7 @@ export class App {
   }
 
   filteredContacts() {
-    return this.contacts.filter(c => c.upId === this.selectedUserId);
+    return this.contacts.filter(c => c.ownerUserId === this.selectedUserId);
   }
 
   getLabel(r: any) {
@@ -91,7 +94,7 @@ export class App {
     }).then(result => {
       if (result.isConfirmed && result.value) {
         this.contacts.push({
-          upId: this.selectedUserId,
+          ownerUserId: this.selectedUserId,
           userId: crypto.randomUUID(), // id simple
           alias: result.value.name,
           phone: result.value.phone,
