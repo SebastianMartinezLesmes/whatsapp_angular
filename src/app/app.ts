@@ -43,17 +43,20 @@ export class App {
   ];
 
   relations = [
-    { type: "familia", personA: "user123", personB: "u1", relation: "sibling" },
-    { type: "amistad", personA: "user123", personB: "u2", relation: "friend" },
-    { type: "trabajo",  personA: "user123", entity: "empresa01", relation: "compañero" }
+    { ownerUserId: "6931a81cbc6a1f597075db45", type: "familia", personA: "user123", personB: "u1", relation: "sibling" },
+    { ownerUserId: "6931a81cbc6a1f597075db45", type: "amistad", personA: "user123", personB: "u2", relation: "friend" },
+    { ownerUserId: "6931a9a7bc6a1f597075db4a", type: "trabajo",  personA: "user123", entity: "empresa01", relation: "compañero" }
   ];
 
   filterType = "";
 
   filteredRelations() {
-    if (!this.filterType) return this.relations;
-    return this.relations.filter(r => r.type === this.filterType);
+    return this.relations.filter(r =>
+      r.ownerUserId === this.selectedUserId &&
+      (!this.filterType || r.type === this.filterType)
+    );
   }
+
 
   filteredContacts() {
     return this.contacts.filter(c => c.ownerUserId === this.selectedUserId);
